@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;SweetOps - The Ultimate Candy Reviewer&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Updated font to Fredoka One for a better bold candy aesthetic --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-1: #093C5D;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-2: #3B7597;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-3: #6FD1D7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-4: #5DF8D8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Fredoka', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--color-1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100vw;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bg-custom-gradient {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.glass-panel {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(10px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.candy-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.candy-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(111, 209, 215, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--color-4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.candy-card.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--color-3);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--color-4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.no-scrollbar::-webkit-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.no-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-ms-overflow-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scrollbar-width: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-buy {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--color-4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-buy:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filter: brightness(1.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rating-star {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Animation for content changes */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(10px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.animate-in {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeIn 0.4s ease-out forwards;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(255, 255, 255, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-download {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--color-4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-download:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--color-4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--color-1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-custom-gradient flex flex-col p-4 md:p-8"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="flex justify-between items-center mb-6 h-[8vh]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w-12 h-12 rounded-full bg-[#5DF8D8] flex items-center justify-center shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-2xl text-[#093C5D]"&gt;🍬&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-3xl md:text-4xl font-bold tracking-tight" style="color: var(--color-4);"&gt;SweetOps&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;nav class="hidden md:flex gap-8 text-lg font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#" class="hover:text-[#6FD1D7] transition-colors"&gt;Trending&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#" class="hover:text-[#6FD1D7] transition-colors"&gt;New Drops&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="downloadCode()" class="btn-download px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;⬇&lt;/span&gt; Download index.html</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Main Content Area --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="flex flex-col md:flex-row gap-6 h-[82vh]"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Left: Product List (Scrollable internal) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="w-full md:w-1/3 flex flex-col gap-4 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center justify-between px-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-2xl font-semibold"&gt;Today's Picks&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-sm opacity-70"&gt;12 Candies Found&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="candy-list" class="flex flex-col gap-4 overflow-y-auto no-scrollbar pr-2 pb-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Cards will be injected here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Right: Review Detail --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="detail-view" class="w-full md:w-2/3 glass-panel p-6 md:p-10 flex flex-col md:flex-row gap-8 overflow-hidden relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="detail-content" class="flex flex-col md:flex-row gap-8 w-full h-full opacity-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Content injected by JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const candyData = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 1,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name: "Sour Patch Kids",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>tagline: "First they're sour, then they're sweet.",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>rating: 4.8,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>price: "$3.49",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>image: "https://images.unsplash.com/photo-1581798459219-318e76aecc7b?auto=format&amp;fit=crop&amp;q=80&amp;w=800",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: "A cult classic that balances a citric acid punch with a soft gummy center. Perfect for movie nights and long road trips.",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opinions: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@SugarRush", text: "The blue ones are objectively the best.", stars: 5 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@SourKing", text: "Wish they were even more sour!", stars: 4 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@GummyLover", text: "Consistency is always perfect.", stars: 5 }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>whereToBuy: "Available at Walmart, Target, and Amazon."</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 2,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name: "Ferrero Rocher",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>tagline: "The golden experience of hazelnut.",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>rating: 4.9,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>price: "$12.99",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&amp;fit=crop&amp;q=80&amp;w=800",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: "A whole roasted hazelnut encased in a thin wafer shell filled with hazelnut cream, covered in milk chocolate and chopped hazelnuts.",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opinions: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@FancyBites", text: "The perfect gift for literally anyone.", stars: 5 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@ChocoAddict", text: "I can't stop at just one. Dangerous.", stars: 5 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@NuttyTraveler", text: "Expensive but worth every cent.", stars: 4 }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>whereToBuy: "Luxury grocers, Costco, and Duty-Free shops."</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 3,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name: "Japanese KitKat Matcha",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>tagline: "Authentic green tea elegance.",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>rating: 4.5,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>price: "$8.50",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>image: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&amp;fit=crop&amp;q=80&amp;w=800",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: "Direct from Japan, this KitKat features high-quality Uji Matcha mixed into the white chocolate coating for an earthy, refined taste.",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opinions: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@TokyoTreats", text: "Better than the original milk chocolate.", stars: 5 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@MatchaMom", text: "A bit sweet, but the tea flavor is real.", stars: 4 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@SnackExotic", text: "Hard to find but amazing texture.", stars: 5 }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>whereToBuy: "H-Mart, Don Quijote, or specialty importers."</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 4,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name: "Skittles Wild Berry",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>tagline: "Experience the berry rainbow.",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>rating: 4.3,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>price: "$2.99",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>image: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&amp;fit=crop&amp;q=80&amp;w=800",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: "A fruity explosion of Melon Berry, Strawberry, Raspberry, Wild Cherry, and Berry Punch flavors.",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opinions: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@RainbowRider", text: "Purple is the king of this bag.", stars: 5 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@DentistDream", text: "Too sticky for me, but the taste is 10/10.", stars: 3 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ user: "@FruitFanatic", text: "Great for mixing with original skittles.", stars: 4 }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>whereToBuy: "CVS, Walgreens, and 7-Eleven."</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let activeId = 1;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderStars(rating) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let stars = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for(let i=0; i&lt;5; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stars += i &lt; Math.floor(rating) ? '★' : '☆';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return stars;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setActiveCandy(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>activeId = id;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const candy = candyData.find(c =&gt; c.id === id);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update List UI</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.candy-card').forEach(card =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(parseInt(card.dataset.id) === id) card.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update Detail UI</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const detail = document.getElementById('detail-content');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>detail.classList.remove('animate-in');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>detail.style.opacity = '0';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>detail.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-full md:w-1/2 flex flex-col h-full overflow-y-auto no-scrollbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="relative group h-64 md:h-80 w-full mb-6 overflow-hidden rounded-2xl shadow-2xl bg-white/5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="${candy.image}" alt="${candy.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&amp;fit=crop&amp;q=80&amp;w=800';"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="absolute top-4 right-4 bg-[var(--color-1)] px-4 py-1 rounded-full text-lg font-bold border border-[var(--color-4)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>${candy.price}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-4xl font-bold mb-2 text-[var(--color-4)]"&gt;${candy.name}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg italic opacity-80 mb-4"&gt;"${candy.tagline}"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center gap-4 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-2xl rating-star"&gt;${renderStars(candy.rating)}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-lg font-medium"&gt;${candy.rating} / 5.0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-md leading-relaxed mb-6 opacity-90 font-light"&gt;${candy.description}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-auto pt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xs opacity-70 mb-1 uppercase tracking-widest font-bold"&gt;Find it here:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-md mb-4"&gt;${candy.whereToBuy}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button class="btn-buy w-full py-4 rounded-xl text-lg font-bold uppercase tracking-wide"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Add to Wishlist 🍬</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-full md:w-1/2 flex flex-col gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-2 border-b border-white/20 pb-2"&gt;Public Opinion&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col gap-4 overflow-y-auto no-scrollbar flex-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${candy.opinions.map(op =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white/5 p-4 rounded-xl border border-white/10 transition-colors hover:bg-white/10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex justify-between items-center mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-[var(--color-3)] font-bold"&gt;${op.user}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="rating-star text-sm"&gt;${renderStars(op.stars)}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="italic opacity-90 text-sm font-light"&gt;"${op.text}"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-4 p-4 bg-[var(--color-4)]/10 rounded-xl border border-[var(--color-4)]/30"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm"&gt;Have you tried this? &lt;strong&gt;Submit your rating&lt;/strong&gt; to earn SweetPoints!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>detail.classList.add('animate-in');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>detail.style.opacity = '1';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 50);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function downloadCode() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const htmlContent = document.documentElement.outerHTML;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const blob = new Blob([htmlContent], { type: 'text/html' });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const url = URL.createObjectURL(blob);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const a = document.createElement('a');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>a.href = url;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>a.download = 'candy-reviewer.html';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.appendChild(a);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>a.click();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.removeChild(a);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>URL.revokeObjectURL(url);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function init() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const listContainer = document.getElementById('candy-list');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>listContainer.innerHTML = ''; // Clear existing</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>candyData.forEach(candy =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const card = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.className = `candy-card glass-panel p-4 flex gap-4 items-center ${candy.id === activeId ? 'active' : ''}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.dataset.id = candy.id;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.onclick = () =&gt; setActiveCandy(candy.id);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-white/5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="${candy.image}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&amp;fit=crop&amp;q=80&amp;w=100';"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-lg font-bold leading-tight"&gt;${candy.name}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between items-center mt-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs opacity-80"&gt;${candy.price}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs rating-star"&gt;${renderStars(candy.rating)}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>listContainer.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Set initial state</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setActiveCandy(activeId);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.onload = init;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
